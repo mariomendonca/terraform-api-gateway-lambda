@@ -12,8 +12,9 @@ fi
 API_URL="$1"
 CPF="12345678901"
 
-echo "🧪 Testando sistema de autenticação JWT"
+echo "🧪 Testando Sistema de Autenticação JWT com AWS Lambda + API Gateway"
 echo "🌐 API URL: $API_URL"
+echo "========================================================================"
 echo ""
 
 # Test 1: Generate JWT
