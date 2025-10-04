@@ -1,0 +1,3 @@
+curl -X POST https://dcfgtquv59.execute-api.us-east-1.amazonaws.com/dev/auth \
+  -H "Content-Type: application/json" \
+  -d '{"cpf": "12345678901"}'
