@@ -122,12 +122,11 @@ resource "aws_api_gateway_integration" "validate_post" {
 
 # Lambda Authorizer for protected endpoints
 resource "aws_api_gateway_authorizer" "jwt_authorizer" {
-  name                   = "${var.project_name}-jwt-authorizer"
-  rest_api_id           = aws_api_gateway_rest_api.main.id
-  authorizer_uri        = aws_lambda_function.validate_lambda.invoke_arn
-  authorizer_credentials = aws_iam_role.api_gateway_role.arn
-  type                  = "TOKEN"
-  identity_source       = "method.request.header.Authorization"
+  name            = "${var.project_name}-jwt-authorizer"
+  rest_api_id     = aws_api_gateway_rest_api.main.id
+  authorizer_uri  = aws_lambda_function.validate_lambda.invoke_arn
+  type            = "TOKEN"
+  identity_source = "method.request.header.Authorization"
 }
 
 # Protected endpoint (PRIVATE - requires JWT)
